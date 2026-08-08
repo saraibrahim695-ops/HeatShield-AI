@@ -1,1 +1,0 @@
-# HeatShield-AI
