@@ -291,9 +291,9 @@ if predict_button:
                 # ----------------------------------
 
                 st.caption(
-    f"Weather location: {result['location_name']}, "
-    f"{result['country']} "
-    f"({result['latitude']:.4f}, {result['longitude']:.4f})"
+                f"Weather location: {result['location_name']}, "
+                f"{result['country']} "
+                f"({result['latitude']:.4f}, {result['longitude']:.4f})"
                 )
 
                 col1, col2, col3 = st.columns(3)
