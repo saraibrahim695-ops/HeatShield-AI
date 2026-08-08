@@ -74,11 +74,15 @@ def get_weather(city):
         wind_kmh = wind_ms * 3.6
 
         return {
-            "temperature": temperature,
-            "humidity": humidity,
-            "wind_ms": wind_ms,
-            "wind_kmh": wind_kmh
-        }, None
+    "temperature": temperature,
+    "humidity": humidity,
+    "wind_ms": wind_ms,
+    "wind_kmh": wind_kmh,
+    "latitude": data["coord"]["lat"],
+    "longitude": data["coord"]["lon"],
+    "location_name": data["name"],
+    "country": data["sys"]["country"]
+}, None
 
     except requests.RequestException:
         return None, "Unable to connect to the weather service."
@@ -286,8 +290,10 @@ if predict_button:
                 # WEATHER
                 # ----------------------------------
 
-                st.subheader(
-                    f"📍 {city.strip().title()}"
+                st.caption(
+    f"Weather location: {result['location_name']}, "
+    f"{result['country']} "
+    f"({result['latitude']:.4f}, {result['longitude']:.4f})"
                 )
 
                 col1, col2, col3 = st.columns(3)
