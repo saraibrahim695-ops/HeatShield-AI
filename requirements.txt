@@ -1,6 +1,6 @@
-gradio
-pandas
-numpy
-scikit-learn
+streamlit
 requests
 joblib
+scikit-learn
+pandas
+numpy
