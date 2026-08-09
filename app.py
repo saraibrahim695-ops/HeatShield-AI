@@ -641,7 +641,7 @@ if predict_button:
                                             f"{T['extreme_advice']}"
                                                 )
 
-                                                elif result["prediction"] == "High":
+                elif result["prediction"] == "High":
 
                                                     st.warning(
                                                             f"⚠️ {T['high']} "
