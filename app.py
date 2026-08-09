@@ -631,7 +631,7 @@ if predict_button:
                         result["advice"]
                         )
 
-                        st.write(translated_advice)
+                st.write(translated_advice)
 
                 # ----------------------------------
                 # MODEL INFORMATION
