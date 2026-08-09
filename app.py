@@ -16,40 +16,40 @@ st.markdown("""
 <style>
 
     /* Center main content */
-        .block-container {
-                text-align: center;
-                    }
+    .block-container {
+        text-align: center;
+    }
 
-                        /* Center headings */
-                            h1, h2, h3 {
-                                    text-align: center;
-                                        }
+    /* Center headings */
+    h1, h2, h3 {
+        text-align: center;
+    }
 
-                                            /* Center paragraphs and text */
-                                                .stMarkdown,
-                                                    .stCaption {
-                                                            text-align: center;
-                                                                }
+    /* Center paragraphs and text */
+    .stMarkdown,
+    .stCaption {
+        text-align: center;
+    }
 
-                                                                    /* Center metric labels and values */
-                                                                        [data-testid="stMetric"] {
-                                                                                text-align: center;
-                                                                                    }
+    /* Center metric labels and values */
+    [data-testid="stMetric"] {
+        text-align: center;
+    }
 
-                                                                                        /* Center buttons */
-                                                                                            .stButton {
-                                                                                                    display: flex;
-                                                                                                            justify-content: center;
-                                                                                                                }
+    /* Center buttons */
+    .stButton {
+        display: flex;
+        justify-content: center;
+    }
 
-                                                                                                                    /* Center progress bar */
-                                                                                                                        [data-testid="stProgress"] {
-                                                                                                                                margin-left: auto;
-                                                                                                                                        margin-right: auto;
-                                                                                                                                            }
+    /* Center progress bar */
+    [data-testid="stProgress"] {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-                                                                                                                                            </style>
-                                                                                                                                            """)
+</style>
+""")
 
 # ==========================================
 # LANGUAGE SUPPORT
