@@ -9,43 +9,59 @@ with open('app.py', 'r') as f:
       app_content = f.read()
       print(app_content)
 # ==========================================
-# CENTER ALIGNMENT
+# CENTERED DESIGN
 # ==========================================
 
 st.markdown("""
 <style>
 
-    /* Center main content */
-    .block-container {
-        text-align: center;
+    /* Main application area */
+    .main .block-container {
+        max-width: 900px;
+        margin: auto;
+        padding-top: 2rem;
     }
 
-    /* Center headings */
-    h1, h2, h3 {
-        text-align: center;
+    /* Titles and headings */
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center !important;
     }
 
-    /* Center paragraphs and text */
+    /* Regular text */
     .stMarkdown,
     .stCaption {
-        text-align: center;
+        text-align: center !important;
     }
 
-    /* Center metric labels and values */
+    /* Metric cards */
     [data-testid="stMetric"] {
-        text-align: center;
+        text-align: center !important;
+        align-items: center !important;
     }
 
-    /* Center buttons */
+    [data-testid="stMetricLabel"] {
+        justify-content: center !important;
+    }
+
+    [data-testid="stMetricValue"] {
+        justify-content: center !important;
+    }
+
+    /* Buttons */
     .stButton {
         display: flex;
         justify-content: center;
     }
 
-    /* Center progress bar */
+    /* Progress bar */
     [data-testid="stProgress"] {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Input box */
+    [data-testid="stTextInput"] {
+        text-align: center;
     }
 
 </style>
@@ -514,8 +530,14 @@ def predict_city(city):
 # USER INTERFACE
 # ==========================================
 
-st.title(T["title"])
-st.subheader(T["subtitle"])
+st.markdown(
+    f"<h1 style='text-align:center;'>{T['title']}</h1>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    f"<h3 style='text-align:center;'>{T['subtitle']}</h3>",
+    unsafe_allow_html=True
+)
 
 st.markdown(
     f"""
@@ -570,8 +592,9 @@ if predict_button:
                 # WEATHER
                 # ----------------------------------
 
-                st.subheader(
-                    f"📍 {city.strip().title()}"
+                st.markdown(
+    f"<h2 style='text-align:center;'>📍 {city.strip().title()}</h2>",
+    unsafe_allow_html=True
                 )
 
 
