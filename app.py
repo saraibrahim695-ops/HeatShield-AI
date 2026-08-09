@@ -649,7 +649,7 @@ if predict_button:
                                                                             f"{T['high_advice']}"
                                                                                 )
 
-                                                                                elif result["prediction"] == "Moderate":
+                elif result["prediction"] == "Moderate":
 
                                                                                     st.warning(
                                                                                             f"🟡 {T['moderate']} "
@@ -657,7 +657,7 @@ if predict_button:
                                                                                                             f"{T['moderate_advice']}"
                                                                                                                 )
 
-                                                                                                                else:
+                else:
 
                                                                                                                     st.success(
                                                                                                                             f"🟢 {T['low']} "
