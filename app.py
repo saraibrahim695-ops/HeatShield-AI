@@ -88,7 +88,7 @@ language = LANGUAGES[language_name]
 # TRANSLATIONS
 # ==========================================
 
-TEXT = 
+TEXT = {
     "en": {
     "title": "🌡️ HeatShield AI",
     "subtitle": "AI-Powered Heat Risk Prediction & Early Warning",
@@ -409,6 +409,7 @@ TEXT =
     "extreme_advice": "避免长时间暴露在高温环境中，并待在凉爽或有空调的地方。",
     "source": "来源：OpenWeather"
         }
+}
 
 T = TEXT[language]
 
