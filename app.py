@@ -15,49 +15,62 @@ with open('app.py', 'r') as f:
 st.html("""
 <style>
 
-.main .block-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-/* Center headings */
-h1, h2, h3, h4, h5, h6 {
+/* MAIN TITLE */
+h1 {
+    font-size: 30pt !important;
+    font-weight: 800 !important;
     text-align: center !important;
 }
 
-/* Center normal text */
-.stMarkdown {
+/* MAIN HEADINGS */
+h2 {
+    font-size: 20pt !important;
+    font-weight: 700 !important;
     text-align: center !important;
 }
 
-/* Center captions */
-.stCaption {
+h3 {
+    font-size: 19pt !important;
+    font-weight: 700 !important;
     text-align: center !important;
 }
 
-/* Center metrics */
-[data-testid="stMetric"] {
-    text-align: center !important;
+/* NORMAL TEXT */
+p {
+    font-size: 13pt;
+    line-height: 1.55;
 }
 
+/* METRIC LABELS */
 [data-testid="stMetricLabel"] {
-    justify-content: center !important;
+    font-size: 12pt !important;
 }
 
+/* METRIC VALUES */
 [data-testid="stMetricValue"] {
-    justify-content: center !important;
+    font-size: 22pt !important;
+    font-weight: 700 !important;
 }
 
-/* Center buttons */
-.stButton {
-    display: flex;
-    justify-content: center;
+/* RISK / LARGE MARKDOWN TEXT */
+.stMarkdown {
+    line-height: 1.55;
 }
 
-/* Center progress bar */
-[data-testid="stProgress"] {
-    margin-left: auto;
-    margin-right: auto;
+/* BUTTON */
+.stButton button {
+    font-size: 13pt !important;
+    font-weight: 600 !important;
+}
+
+/* INPUT LABEL */
+[data-testid="stTextInput"] label {
+    font-size: 13pt !important;
+}
+
+/* CAPTION / FOOTER */
+.stCaption {
+    font-size: 10pt !important;
 }
 
 </style>
