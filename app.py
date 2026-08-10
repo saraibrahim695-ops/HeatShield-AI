@@ -747,11 +747,14 @@ if predict_button:
 
                 st.write(translated_advice)
 
-                # ----------------------------------
-                # MODEL INFORMATION
-                # ----------------------------------
-    with st.expander(T["about"]):
+# ==========================================
+# MODEL INFORMATION
+# ==========================================
+
+with st.expander(T["about"]):
+
     st.write(T["ai_info_1"])
+
     st.write(T["ai_info_2"])
 
 
