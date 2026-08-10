@@ -134,6 +134,7 @@ TEXT = {
     "about": "🤖 About the AI",
     "ai_info_1": "HeatShield AI uses a Random Forest machine-learning model trained using weather observations containing temperature, humidity, and wind speed.",
     "ai_info_2": "The system combines the model prediction with a heat-risk score and live weather information to provide an understandable risk assessment.",
+    "no_factor": "✅ No major heat-related weather factor detected.",
     "source": "Source: OpenWeather"
      },
 
@@ -171,6 +172,7 @@ TEXT = {
     "moderate": "متوسط",
     "high": "مرتفع",
     "extreme": "شديد",
+    "no_factor": "✅ لم يتم اكتشاف أي عامل جوي رئيسي مرتبط بالحرارة.",
     "source": "المصدر: OpenWeather"
         },
 
@@ -208,6 +210,7 @@ TEXT = {
     "moderate": "MODERADO",
     "high": "ALTO",
     "extreme": "EXTREMO",
+    "no_factor": "✅ No se detectó ningún factor meteorológico importante relacionado con el calor.",
     "source": "Fuente: OpenWeather"
         },
 
@@ -245,6 +248,7 @@ TEXT = {
     "moderate": "MODÉRÉ",
     "high": "ÉLEVÉ",
     "extreme": "EXTRÊME",
+    "no_factor": "✅ Aucun facteur météorologique majeur lié à la chaleur n'a été détecté.",
     "source": "Source : OpenWeather"
         },
 
@@ -282,6 +286,7 @@ TEXT = {
     "moderate": "मध्यम",
     "high": "उच्च",
     "extreme": "अत्यधिक",
+    "no_factor": "✅ गर्मी से संबंधित कोई प्रमुख मौसम कारक नहीं पाया गया।",
     "source": "स्रोत: OpenWeather"
         },
 
@@ -319,6 +324,7 @@ TEXT = {
     "moderate": "درمیانہ",
     "high": "زیادہ",
     "extreme": "انتہائی",
+    "no_factor": "✅ گرمی سے متعلق موسم کا کوئی بڑا عنصر نہیں ملا۔",
     "source": "ماخذ: OpenWeather"
         },
 
@@ -356,6 +362,7 @@ TEXT = {
     "moderate": "中等",
     "high": "高",
     "extreme": "极高",
+    "no_factor": "✅ 未检测到与高温相关的主要天气因素。",
     "source": "来源：OpenWeather"
         }
 }
@@ -515,7 +522,7 @@ def explain_prediction(temp, humidity, wind_ms):
         reasons.append("🌬️ Low wind speed provides less cooling")
 
     if not reasons:
-        reasons.append("✅ No major heat-related weather factor detected.")
+        reasons.append(T["no_factor"])
 
     return reasons
 
