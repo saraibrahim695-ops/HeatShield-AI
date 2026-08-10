@@ -214,7 +214,15 @@ TEXT = {
     "moderate": "MODERADO",
     "high": "ALTO",
     "extreme": "EXTREMO",
+    "very_high_temp": "Temperatura muy alta",
+    "high_temp": "Temperatura alta",
+    "high_humidity": "Humedad alta",
+    "low_wind": "La baja velocidad del viento proporciona menos refrigeración",
     "no_factor": "✅ No se detectó ningún factor meteorológico importante relacionado con el calor.",
+    "low_advice": "Mantente hidratado y disfruta de tus actividades normales al aire libre.",
+    "moderate_advice": "Bebe agua regularmente, descansa a la sombra y evita la exposición prolongada a la luz solar directa.",
+    "high_advice": "Limita las actividades al aire libre, permanece en zonas sombreadas, bebe agua con frecuencia y toma descansos.",
+    "extreme_advice": "Evita la exposición prolongada al calor y permanece en un lugar fresco o con aire acondicionado.",
     "source": "Fuente: OpenWeather"
         },
 
@@ -252,7 +260,15 @@ TEXT = {
     "moderate": "MODÉRÉ",
     "high": "ÉLEVÉ",
     "extreme": "EXTRÊME",
+    "very_high_temp": "Température très élevée",
+    "high_temp": "Température élevée",
+    "high_humidity": "Humidité élevée",
+    "low_wind": "La faible vitesse du vent offre moins de refroidissement",
     "no_factor": "✅ Aucun facteur météorologique majeur lié à la chaleur n'a été détecté.",
+    "low_advice": "Restez hydraté et profitez normalement de vos activités extérieures.",
+    "moderate_advice": "Buvez régulièrement de l'eau, faites des pauses à l'ombre et évitez une exposition prolongée au soleil.",
+    "high_advice": "Limitez les activités extérieures, restez dans des zones ombragées, buvez fréquemment et faites des pauses régulières.",
+    "extreme_advice": "Évitez une exposition prolongée à la chaleur et restez dans un endroit frais ou climatisé.",
     "source": "Source : OpenWeather"
         },
 
@@ -290,7 +306,15 @@ TEXT = {
     "moderate": "मध्यम",
     "high": "उच्च",
     "extreme": "अत्यधिक",
+    "very_high_temp": "बहुत अधिक तापमान",
+    "high_temp": "अधिक तापमान",
+    "high_humidity": "अधिक नमी",
+    "low_wind": "कम हवा की गति से ठंडक कम मिलती है",
     "no_factor": "✅ गर्मी से संबंधित कोई प्रमुख मौसम कारक नहीं पाया गया।",
+    "low_advice": "पर्याप्त पानी पिएँ और सामान्य बाहरी गतिविधियों का आनंद लें।",
+    "moderate_advice": "नियमित रूप से पानी पिएँ, छायादार स्थानों पर आराम करें और सीधे सूर्य के प्रकाश में लंबे समय तक रहने से बचें।",
+    "high_advice": "बाहरी गतिविधियों को सीमित करें, छायादार स्थानों में रहें, बार-बार पानी पिएँ और नियमित रूप से आराम करें।",
+    "extreme_advice": "लंबे समय तक गर्मी में रहने से बचें और ठंडी या वातानुकूलित जगह पर रहें।",
     "source": "स्रोत: OpenWeather"
         },
 
@@ -328,7 +352,15 @@ TEXT = {
     "moderate": "درمیانہ",
     "high": "زیادہ",
     "extreme": "انتہائی",
+    "very_high_temp": "بہت زیادہ درجہ حرارت",
+    "high_temp": "زیادہ درجہ حرارت",
+    "high_humidity": "زیادہ نمی",
+    "low_wind": "ہوا کی کم رفتار سے ٹھنڈک کم ہوتی ہے",
     "no_factor": "✅ گرمی سے متعلق موسم کا کوئی بڑا عنصر نہیں ملا۔",
+    "low_advice": "اپنے جسم کو ہائیڈریٹ رکھیں اور معمول کی بیرونی سرگرمیوں سے لطف اٹھائیں۔",
+    "moderate_advice": "باقاعدگی سے پانی پئیں، سایہ دار جگہوں پر وقفہ لیں اور براہ راست دھوپ میں زیادہ دیر رہنے سے گریز کریں۔",
+    "high_advice": "بیرونی سرگرمیوں کو محدود کریں، سایہ دار جگہوں پر رہیں، بار بار پانی پئیں اور باقاعدگی سے وقفہ لیں۔",
+    "extreme_advice": "گرمی میں زیادہ دیر رہنے سے گریز کریں اور ٹھنڈی یا ایئر کنڈیشنڈ جگہ پر رہیں۔",
     "source": "ماخذ: OpenWeather"
         },
 
@@ -366,10 +398,17 @@ TEXT = {
     "moderate": "中等",
     "high": "高",
     "extreme": "极高",
+    "very_high_temp": "极高温度",
+    "high_temp": "高温",
+    "high_humidity": "高湿度",
+    "low_wind": "低风速带来的降温效果较弱",
     "no_factor": "✅ 未检测到与高温相关的主要天气因素。",
+    "low_advice": "保持充足水分，可以正常进行户外活动。",
+    "moderate_advice": "定期喝水，在阴凉处休息，并避免长时间直接暴露在阳光下。",
+    "high_advice": "减少户外活动，尽量待在阴凉处，经常喝水并定期休息。",
+    "extreme_advice": "避免长时间暴露在高温环境中，并待在凉爽或有空调的地方。",
     "source": "来源：OpenWeather"
         }
-}
 
 T = TEXT[language]
 
