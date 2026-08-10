@@ -172,6 +172,10 @@ TEXT = {
     "moderate": "متوسط",
     "high": "مرتفع",
     "extreme": "شديد",
+    "very_high_temp": "درجة حرارة مرتفعة جدًا",
+    "high_temp": "درجة حرارة مرتفعة",
+    "high_humidity": "رطوبة مرتفعة",
+    "low_wind": "سرعة رياح منخفضة توفر تبريدًا أقل",
     "no_factor": "✅ لم يتم اكتشاف أي عامل جوي رئيسي مرتبط بالحرارة.",
     "source": "المصدر: OpenWeather"
         },
@@ -510,16 +514,16 @@ def explain_prediction(temp, humidity, wind_ms):
     reasons = []
 
     if temp >= 40:
-        reasons.append("🌡️ Very high temperature")
+        reasons.append("🌡️ " + T["very_high_temp"])
 
     elif temp >= 38:
-        reasons.append("🌡️ High temperature")
+        reasons.append("🌡️ " + T["high_temp"])
 
     if humidity >= 70:
-        reasons.append("💧 High humidity")
+        reasons.append("💧 " + T["high_humidity"])
 
     if wind_ms <= 5:
-        reasons.append("🌬️ Low wind speed provides less cooling")
+        reasons.append("🌬️ " + T["low_wind"])
 
     if not reasons:
         reasons.append(T["no_factor"])
