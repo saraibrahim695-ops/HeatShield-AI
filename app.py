@@ -12,57 +12,53 @@ with open('app.py', 'r') as f:
 # CENTERED DESIGN
 # ==========================================
 
-st.markdown("""
+st.html("""
 <style>
 
-    /* Main application area */
-    .main .block-container {
-        max-width: 900px;
-        margin: auto;
-        padding-top: 2rem;
-    }
+.main .block-container {
+    max-width: 900px;
+    margin: auto;
+}
 
-    /* Titles and headings */
-    h1, h2, h3, h4, h5, h6 {
-        text-align: center !important;
-    }
+/* Center headings */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+}
 
-    /* Regular text */
-    .stMarkdown,
-    .stCaption {
-        text-align: center !important;
-    }
+/* Center normal text */
+.stMarkdown {
+    text-align: center !important;
+}
 
-    /* Metric cards */
-    [data-testid="stMetric"] {
-        text-align: center !important;
-        align-items: center !important;
-    }
+/* Center captions */
+.stCaption {
+    text-align: center !important;
+}
 
-    [data-testid="stMetricLabel"] {
-        justify-content: center !important;
-    }
+/* Center metrics */
+[data-testid="stMetric"] {
+    text-align: center !important;
+}
 
-    [data-testid="stMetricValue"] {
-        justify-content: center !important;
-    }
+[data-testid="stMetricLabel"] {
+    justify-content: center !important;
+}
 
-    /* Buttons */
-    .stButton {
-        display: flex;
-        justify-content: center;
-    }
+[data-testid="stMetricValue"] {
+    justify-content: center !important;
+}
 
-    /* Progress bar */
-    [data-testid="stProgress"] {
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* Center buttons */
+.stButton {
+    display: flex;
+    justify-content: center;
+}
 
-    /* Input box */
-    [data-testid="stTextInput"] {
-        text-align: center;
-    }
+/* Center progress bar */
+[data-testid="stProgress"] {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 </style>
 """)
