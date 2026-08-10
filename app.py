@@ -166,7 +166,11 @@ TEXT = {
     "why": "🧠 لماذا توقع الذكاء الاصطناعي ذلك؟",
     "about": "🤖 حول الذكاء الاصطناعي",
     "ai_info_1": "يستخدم HeatShield AI نموذج الغابة العشوائية للتعلم الآلي، وقد تم تدريبه باستخدام بيانات الطقس التي تتضمن درجة الحرارة والرطوبة وسرعة الرياح.",
-    "ai_info_2": "يجمع النظام بين توقع النموذج ودرجة مخاطر الحرارة وبيانات الطقس المباشرة لتقديم تقييم واضح لمستوى الخطر.",     
+    "ai_info_2": "يجمع النظام بين توقع النموذج ودرجة مخاطر الحرارة وبيانات الطقس المباشرة لتقديم تقييم واضح لمستوى الخطر.",
+    "low": "منخفض",
+    "moderate": "متوسط",
+    "high": "مرتفع",
+    "extreme": "شديد",
     "source": "المصدر: OpenWeather"
         },
 
@@ -200,6 +204,10 @@ TEXT = {
     "about": "🤖 Sobre la IA",
     "ai_info_1": "HeatShield AI utiliza un modelo de aprendizaje automático Random Forest entrenado con observaciones meteorológicas que incluyen temperatura, humedad y velocidad del viento.",
     "ai_info_2": "El sistema combina la predicción del modelo con una puntuación de riesgo de calor y datos meteorológicos actuales para proporcionar una evaluación comprensible del riesgo.",
+    "low": "BAJO",
+    "moderate": "MODERADO",
+    "high": "ALTO",
+    "extreme": "EXTREMO",
     "source": "Fuente: OpenWeather"
         },
 
@@ -233,6 +241,10 @@ TEXT = {
     "about": "🤖 À propos de l'IA",
     "ai_info_1": "HeatShield AI utilise un modèle d'apprentissage automatique Random Forest entraîné avec des observations météorologiques comprenant la température, l'humidité et la vitesse du vent.",
     "ai_info_2": "Le système combine la prédiction du modèle avec un score de risque de chaleur et les données météorologiques en temps réel afin de fournir une évaluation compréhensible du risque.",
+    "low": "FAIBLE",
+    "moderate": "MODÉRÉ",
+    "high": "ÉLEVÉ",
+    "extreme": "EXTRÊME",
     "source": "Source : OpenWeather"
         },
 
@@ -266,6 +278,10 @@ TEXT = {
     "about": "🤖 AI के बारे में",
     "ai_info_1": "HeatShield AI एक Random Forest मशीन लर्निंग मॉडल का उपयोग करता है, जिसे तापमान, नमी और हवा की गति वाले मौसम संबंधी डेटा से प्रशिक्षित किया गया है।",
     "ai_info_2": "यह प्रणाली मॉडल के अनुमान को हीट-रिस्क स्कोर और लाइव मौसम डेटा के साथ जोड़कर जोखिम का आसान मूल्यांकन प्रदान करती है।",
+    "low": "कम",
+    "moderate": "मध्यम",
+    "high": "उच्च",
+    "extreme": "अत्यधिक",
     "source": "स्रोत: OpenWeather"
         },
 
@@ -299,6 +315,10 @@ TEXT = {
     "about": "🤖 AI کے بارے میں",
     "ai_info_1": "HeatShield AI ایک Random Forest مشین لرننگ ماڈل استعمال کرتا ہے جسے درجہ حرارت، نمی اور ہوا کی رفتار پر مشتمل موسمی مشاہدات سے تربیت دی گئی ہے۔",
     "ai_info_2": "یہ نظام ماڈل کی پیش گوئی کو گرمی کے خطرے کے اسکور اور براہ راست موسم کے ڈیٹا کے ساتھ ملا کر خطرے کا آسان اور قابلِ فہم جائزہ فراہم کرتا ہے۔",
+    "low": "کم",
+    "moderate": "درمیانہ",
+    "high": "زیادہ",
+    "extreme": "انتہائی",
     "source": "ماخذ: OpenWeather"
         },
 
@@ -332,6 +352,10 @@ TEXT = {
     "about": "🤖 关于 AI",
     "ai_info_1": "HeatShield AI 使用 Random Forest 机器学习模型，该模型使用包含温度、湿度和风速的天气观测数据进行训练。",
     "ai_info_2": "系统将模型预测、高温风险评分和实时天气信息结合起来，为用户提供易于理解的风险评估。",
+    "low": "低",
+    "moderate": "中等",
+    "high": "高",
+    "extreme": "极高",
     "source": "来源：OpenWeather"
         }
 }
@@ -438,41 +462,34 @@ def calculate_heat_score(temp, humidity, wind_ms):
 def get_risk_info(prediction):
 
     if prediction == "Low":
-
         return (
             "🟢",
-            "LOW",
-            "Stay hydrated and enjoy normal outdoor activities.",
+            T["low"],
+            T["low_advice"],
             "success"
         )
 
     elif prediction == "Moderate":
-
         return (
             "🟡",
-            "MODERATE",
-            "Drink water regularly, take breaks in the shade, "
-            "and avoid prolonged exposure to direct sunlight.",
+            T["moderate"],
+            T["moderate_advice"],
             "warning"
         )
 
     elif prediction == "High":
-
         return (
             "🟠",
-            "HIGH",
-            "Limit outdoor activity, stay in shaded areas, "
-            "drink water frequently, and take regular breaks.",
+            T["high"],
+            T["high_advice"],
             "warning"
         )
 
     else:
-
         return (
             "🔴",
-            "EXTREME",
-            "Avoid prolonged outdoor exposure and stay in a cool "
-            "or air-conditioned environment.",
+            T["extreme"],
+            T["extreme_advice"],
             "error"
         )
 
