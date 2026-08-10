@@ -88,7 +88,7 @@ language = LANGUAGES[language_name]
 # TRANSLATIONS
 # ==========================================
 
-TEXT = {
+TEXT = 
     "en": {
     "title": "🌡️ HeatShield AI",
     "subtitle": "AI-Powered Heat Risk Prediction & Early Warning",
