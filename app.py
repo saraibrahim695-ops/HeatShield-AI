@@ -750,7 +750,7 @@ if predict_button:
                 # ----------------------------------
                 # MODEL INFORMATION
                 # ----------------------------------
-                  with st.expander(T["about"]):
+    with st.expander(T["about"]):
     st.write(T["ai_info_1"])
     st.write(T["ai_info_2"])
 
