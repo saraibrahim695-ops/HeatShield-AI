@@ -45,3 +45,19 @@ HeatShield-AI/
 ├── requirements.txt
 ├── README.md
 └── .devcontainer/
+
+## ▶️ Run Locally
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/saraibrahim695-ops/HeatShield-AI.git
+cd HeatShield-AI
+
+pip install -r requirements.txt
+
+streamlit run app.py
+
+4. Open the local URL provided by Streamlit in your browser.
+
+> Note: Live weather functionality requires the required weather API configuration.
