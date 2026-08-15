@@ -1,19 +1,47 @@
-This directory includes a few sample datasets to get you started.
+# 🌡️ HeatShield AI
 
-*   `california_housing_data*.csv` is California housing data from the 1990 US
-    Census; more information is available at:
-    https://docs.google.com/document/d/e/2PACX-1vRhYtsvc5eOR2FWNCwaBiKL6suIOrxJig8LcSBbmCbyYsayia_DvPOOBlXZ4CAlQ5nlDD8kTaIDRwrN/pub
+### AI-Powered Heat Risk Prediction & Early Warning
 
-*   `mnist_*.csv` is a small sample of the
-    [MNIST database](https://en.wikipedia.org/wiki/MNIST_database), which is
-    described at: http://yann.lecun.com/exdb/mnist/
+HeatShield AI is a machine-learning application designed to help people understand and respond to dangerous heat conditions.
 
-*   `anscombe.json` contains a copy of
-    [Anscombe's quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet); it
-    was originally described in
+The application combines live weather data with a Random Forest machine-learning model to estimate heat risk and provide practical safety recommendations.
 
-    Anscombe, F. J. (1973). 'Graphs in Statistical Analysis'. American
-    Statistician. 27 (1): 17-21. JSTOR 2682899.
+## 🚀 Features
 
-    and our copy was prepared by the
-    [vega_datasets library](https://github.com/altair-viz/vega_datasets/blob/4f67bdaad10f45e3549984e17e1b3088c731503d/vega_datasets/_data/anscombe.json).
+- 🌡️ Live weather information
+- 🤖 AI-powered heat-risk prediction
+- 🔥 Heat-risk score from 0–100
+- 📊 AI confidence score
+- 🧠 Explanation of factors behind the prediction
+- 💡 Practical safety recommendations
+- 🌍 Support for 7 languages
+- 📱 Web-based interface
+
+## 🧠 How It Works
+
+1. The user enters a city.
+2. HeatShield AI retrieves live weather conditions.
+3. Temperature, humidity, and wind data are processed.
+4. The Random Forest model predicts the heat-risk level.
+5. HeatShield AI generates a heat-risk score.
+6. The application provides an explanation and safety recommendations.
+
+## 🛠️ Technologies
+
+- Python
+- Streamlit
+- Scikit-learn
+- Random Forest
+- OpenWeather API
+- Joblib
+- Requests
+
+## 📁 Project Structure
+
+```text
+HeatShield-AI/
+├── app.py
+├── model.pkl
+├── requirements.txt
+├── README.md
+└── .devcontainer/
