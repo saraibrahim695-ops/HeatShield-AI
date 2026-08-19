@@ -1,4 +1,5 @@
 import os
+import time
 import joblib
 import requests
 import streamlit as st
@@ -554,6 +555,43 @@ def create_fortyguard_heatmap(polygon, date, start_time):
 
     except Exception as e:
         return None, f"FortyGuard connection error: {e}"
+
+def get_fortyguard_result(activity_id):
+    if not FORTYGUARD_API_KEY:
+        return None, "FortyGuard API key is missing."
+
+    url = f"https://api.fortyguard.com/v1/status/{activity_id}"
+
+    headers = {
+        "api-key": FORTYGUARD_API_KEY
+    }
+
+    try:
+        for _ in range(60):
+            response = requests.get(
+                url,
+                headers=headers,
+                timeout=30
+            )
+
+            if response.status_code != 200:
+                return None, f"FortyGuard status check failed: {response.text}"
+
+            data = response.json().get("data", {})
+            status = data.get("status", "").lower()
+
+            if status == "completed":
+                return data.get("result"), None
+
+            if status in ("failed", "error"):
+                return None, "FortyGuard heatmap generation failed."
+
+            time.sleep(2)
+
+        return None, "FortyGuard request timed out."
+
+    except Exception as e:
+        return None, f"FortyGuard status error: {e}"
 
 
 # ==========================================
