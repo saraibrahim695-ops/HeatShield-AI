@@ -722,7 +722,7 @@ fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
     # The trained model expects:
     # Temperature (C), Humidity, Wind Speed (km/h)
 
-    features = [[temperature, humidity, wind_kmh]]
+features = [[temperature, humidity, wind_kmh]]
 
     prediction = model.predict(features)[0]
 
