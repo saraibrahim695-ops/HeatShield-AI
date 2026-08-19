@@ -746,7 +746,7 @@ reasons = explain_prediction(
         humidity,
         wind_ms
     )
- return {
+return {
     "temperature": temperature,
     "humidity": humidity,
     "wind_ms": wind_ms,
@@ -761,7 +761,7 @@ reasons = explain_prediction(
     "reasons": reasons,
     "fortyguard_activity_id": fortyguard_activity_id,
     "fortyguard_error": fortyguard_error
- }, None
+}, None
       
 
 # ==========================================
