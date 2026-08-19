@@ -2,6 +2,7 @@ import os
 import time
 import joblib
 import requests
+from datetime import datetime
 import streamlit as st
 # ==========================================
 # HEATSHEILD AI
@@ -712,6 +713,11 @@ polygon = {
         }
     ]
 }
+fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
+    polygon,
+    date=datetime.now().strftime("%Y-%m-%d"),
+    start_time=datetime.now().strftime("%H:%M")
+)
     # IMPORTANT:
     # The trained model expects:
     # Temperature (C), Humidity, Wind Speed (km/h)
