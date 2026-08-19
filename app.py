@@ -727,10 +727,10 @@ features = [[temperature, humidity, wind_kmh]]
 prediction = model.predict(features)[0]
 
     # Confidence
-    try:
+try:
         probabilities = model.predict_proba(features)[0]
         confidence = max(probabilities) * 100
-    except Exception:
+except Exception:
         confidence = 0
 
     score = calculate_heat_score(
