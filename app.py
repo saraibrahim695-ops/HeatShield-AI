@@ -515,6 +515,46 @@ def get_weather(city):
     except requests.RequestException:
         return None, "Unable to connect to the weather service."
 
+def create_fortyguard_heatmap(polygon, date, start_time):
+    if not FORTYGUARD_API_KEY:
+        return None, "FortyGuard API key is missing."
+
+    url = "https://api.fortyguard.com/v1/heatmap"
+
+    headers = {
+        "api-key": FORTYGUARD_API_KEY,
+        "Content-Type": "application/json"
+    }
+
+    payload = {
+        "polygon_aoi": polygon,
+        "date_time": {
+            "start_date": date,
+            "start_time": start_time,
+            "filter_type": 1
+        },
+        "granularity": 100
+    }
+
+    try:
+        response = requests.post(
+            url,
+            headers=headers,
+            json=payload,
+            timeout=30
+        )
+
+        if response.status_code != 200:
+            return None, f"FortyGuard request failed: {response.text}"
+
+        data = response.json()
+        activity_id = data.get("data", {}).get("activity_id")
+
+        return activity_id, None
+
+    except Exception as e:
+        return None, f"FortyGuard connection error: {e}"
+
 
 # ==========================================
 # HEAT SCORE
