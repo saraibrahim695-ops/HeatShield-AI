@@ -747,20 +747,22 @@ reasons = explain_prediction(
         wind_ms
     )
 
-  return {
-        "temperature": temperature,
-        "humidity": humidity,
-        "wind_ms": wind_ms,
-        "wind_kmh": wind_kmh,
-        "prediction": prediction,
-        "confidence": confidence,
-        "score": score,
-        "emoji": emoji,
-        "risk_name": risk_name,
-        "advice": advice,
-        "alert_type": alert_type,
-        "reasons": reasons
-    }, None
+ return {
+    "temperature": temperature,
+    "humidity": humidity,
+    "wind_ms": wind_ms,
+    "wind_kmh": wind_kmh,
+    "prediction": prediction,
+    "confidence": confidence,
+    "score": score,
+    "emoji": emoji,
+    "risk_name": risk_name,
+    "advice": advice,
+    "alert_type": alert_type,
+    "reasons": reasons,
+    "fortyguard_activity_id": fortyguard_activity_id,
+    "fortyguard_error": fortyguard_error
+}, None
 
 
 # ==========================================
