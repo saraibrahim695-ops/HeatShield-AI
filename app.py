@@ -502,15 +502,15 @@ def get_weather(city):
         wind_kmh = wind_ms * 3.6
 
         return {
-            "temperature": temperature,
-            "humidity": humidity,
-            "wind_ms": wind_ms,
-            "wind_kmh": wind_kmh,
-            "latitude": data["coord"]["lat"],
-            "longitude": data["coord"]["lon"],
-            "location_name": data["name"],
-            "country": data["sys"]["country"]
-        }, None
+    "temperature": temperature,
+    "humidity": humidity,
+    "wind_ms": wind_ms,
+    "wind_kmh": wind_kmh,
+    "latitude": data["coord"]["lat"],
+    "longitude": data["coord"]["lon"],
+    "location_name": data["name"],
+    "country": data["sys"]["country"]
+}, None
 
 
     except requests.RequestException:
@@ -691,6 +691,8 @@ def predict_city(city):
     humidity = weather["humidity"]
     wind_ms = weather["wind_ms"]
     wind_kmh = weather["wind_kmh"]
+    latitude = weather["latitude"]
+    longitude = weather["longitude"]
 
     # IMPORTANT:
     # The trained model expects:
