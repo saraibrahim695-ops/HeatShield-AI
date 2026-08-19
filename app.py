@@ -693,7 +693,25 @@ def predict_city(city):
     wind_kmh = weather["wind_kmh"]
     latitude = weather["latitude"]
     longitude = weather["longitude"]
-
+polygon = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [longitude - 0.02, latitude - 0.02],
+                    [longitude + 0.02, latitude - 0.02],
+                    [longitude + 0.02, latitude + 0.02],
+                    [longitude - 0.02, latitude + 0.02],
+                    [longitude - 0.02, latitude - 0.02]
+                ]]
+            }
+        }
+    ]
+}
     # IMPORTANT:
     # The trained model expects:
     # Temperature (C), Humidity, Wind Speed (km/h)
