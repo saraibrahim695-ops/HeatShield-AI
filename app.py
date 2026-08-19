@@ -439,17 +439,7 @@ except Exception as e:
     st.error("Could not load model.pkl")
     st.stop()
 
-# ==========================================
-# FORTYGUARD API KEY
-# ==========================================
 
-FORTYGUARD_API_KEY = os.getenv("FORTYGUARD_API_KEY")
-
-try:
-    if not FORTYGUARD_API_KEY:
-        FORTYGUARD_API_KEY = st.secrets["FORTYGUARD_API_KEY"]
-except Exception:
-    pass
 # ==========================================
 # API KEY
 # ==========================================
@@ -468,7 +458,18 @@ try:
 except Exception:
     pass
 
+# ==========================================
+# FORTYGUARD API KEY
+# ==========================================
 
+FORTYGUARD_API_KEY = os.getenv("FORTYGUARD_API_KEY")
+
+try:
+    if not FORTYGUARD_API_KEY:
+        FORTYGUARD_API_KEY = st.secrets["FORTYGUARD_API_KEY"]
+except Exception:
+    pass
+      
 # ==========================================
 # GET LIVE WEATHER
 # ==========================================
