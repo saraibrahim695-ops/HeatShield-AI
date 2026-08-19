@@ -741,7 +741,7 @@ score = calculate_heat_score(
 
 emoji, risk_name, advice, alert_type = get_risk_info(prediction)
 
-    reasons = explain_prediction(
+reasons = explain_prediction(
         temperature,
         humidity,
         wind_ms
