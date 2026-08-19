@@ -747,7 +747,7 @@ reasons = explain_prediction(
         wind_ms
     )
 
-return {
+  return {
         "temperature": temperature,
         "humidity": humidity,
         "wind_ms": wind_ms,
