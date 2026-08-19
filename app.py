@@ -733,7 +733,7 @@ try:
 except Exception:
         confidence = 0
 
-    score = calculate_heat_score(
+score = calculate_heat_score(
         temperature,
         humidity,
         wind_ms
