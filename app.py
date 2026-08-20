@@ -927,7 +927,7 @@ if predict_button:
                         stats = fortyguard_result.get(
                             "stats_data", {}
                         )
-                          st.json(fortyguard_result)
+                        st.json(fortyguard_result)
 
                         # FortyGuard stores the temperature
                         # statistics inside Temperature_stats.
