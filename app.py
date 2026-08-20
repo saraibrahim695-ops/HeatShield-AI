@@ -889,12 +889,12 @@ if predict_button:
                     f"**{T['confidence']}:** "
                     f"{result['confidence']:.1f}%"
                 )
+                  
 # ----------------------------------
 # FORTYGUARD HYPERLOCAL ANALYSIS
 # ----------------------------------
 
 st.subheader("🛰️ FortyGuard Hyperlocal Analysis")
-
 if result.get("fortyguard_error"):
     st.warning(
         f"FortyGuard: {result['fortyguard_error']}"
