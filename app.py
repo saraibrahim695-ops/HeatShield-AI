@@ -680,7 +680,6 @@ def explain_prediction(temp, humidity, wind_ms):
 # ==========================================
 # MAIN PREDICTION
 # ==========================================
-
 def predict_city(city):
 
     weather, error = get_weather(city)
@@ -694,112 +693,79 @@ def predict_city(city):
     wind_kmh = weather["wind_kmh"]
     latitude = weather["latitude"]
     longitude = weather["longitude"]
-polygon = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[
-                    [longitude - 0.02, latitude - 0.02],
-                    [longitude + 0.02, latitude - 0.02],
-                    [longitude + 0.02, latitude + 0.02],
-                    [longitude - 0.02, latitude + 0.02],
-                    [longitude - 0.02, latitude - 0.02]
-                ]]
+
+    polygon = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [longitude - 0.02, latitude - 0.02],
+                        [longitude + 0.02, latitude - 0.02],
+                        [longitude + 0.02, latitude + 0.02],
+                        [longitude - 0.02, latitude + 0.02],
+                        [longitude - 0.02, latitude - 0.02]
+                    ]]
+                }
             }
-        }
-    ]
-}
-fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
-    polygon,
-    date=datetime.now().strftime("%Y-%m-%d"),
-    start_time=datetime.now().strftime("%H:%M")
-)
+        ]
+    }
+
+    fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
+        polygon,
+        date=datetime.now().strftime("%Y-%m-%d"),
+        start_time=datetime.now().strftime("%H:%M")
+    )
+
     # IMPORTANT:
     # The trained model expects:
     # Temperature (C), Humidity, Wind Speed (km/h)
 
-features = [[temperature, humidity, wind_kmh]]
+    features = [[temperature, humidity, wind_kmh]]
 
-prediction = model.predict(features)[0]
+    prediction = model.predict(features)[0]
 
     # Confidence
-try:
+    try:
         probabilities = model.predict_proba(features)[0]
         confidence = max(probabilities) * 100
-except Exception:
+    except Exception:
         confidence = 0
 
-score = calculate_heat_score(
+    score = calculate_heat_score(
         temperature,
         humidity,
         wind_ms
     )
 
-emoji, risk_name, advice, alert_type = get_risk_info(prediction)
+    emoji, risk_name, advice, alert_type = get_risk_info(prediction)
 
-reasons = explain_prediction(
+    reasons = explain_prediction(
         temperature,
         humidity,
         wind_ms
     )
-return {
-    "temperature": temperature,
-    "humidity": humidity,
-    "wind_ms": wind_ms,
-    "wind_kmh": wind_kmh,
-    "prediction": prediction,
-    "confidence": confidence,
-    "score": score,
-    "emoji": emoji,
-    "risk_name": risk_name,
-    "advice": advice,
-    "alert_type": alert_type,
-    "reasons": reasons,
-    "fortyguard_activity_id": fortyguard_activity_id,
-    "fortyguard_error": fortyguard_error
-}, None
-      
 
-# ==========================================
-# USER INTERFACE
-# ==========================================
-
-st.markdown(
-    f"<h1 style='text-align:center;'>{T['title']}</h1>",
-    unsafe_allow_html=True
-)
-st.markdown(
-    f"<h3 style='text-align:center;'>{T['subtitle']}</h3>",
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    f"**{T['description']}**"
-)
-
-st.info(
-    T["live_description"]
-)
-
-st.write(
-    T["enter_description"]
-)
-
-city = st.text_input(
-    T["city"],
-    placeholder="Abu Dhabi"
-)
-
-predict_button = st.button(
-    T["button"],
-    type="primary"
-)
-
-
+    return {
+        "temperature": temperature,
+        "humidity": humidity,
+        "wind_ms": wind_ms,
+        "wind_kmh": wind_kmh,
+        "prediction": prediction,
+        "confidence": confidence,
+        "score": score,
+        "emoji": emoji,
+        "risk_name": risk_name,
+        "advice": advice,
+        "alert_type": alert_type,
+        "reasons": reasons,
+        "fortyguard_activity_id": fortyguard_activity_id,
+        "fortyguard_error": fortyguard_error
+    }, None
+        
 # ==========================================
 # RUN PREDICTION
 # ==========================================
