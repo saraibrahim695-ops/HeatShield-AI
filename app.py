@@ -765,6 +765,42 @@ def predict_city(city):
         "fortyguard_activity_id": fortyguard_activity_id,
         "fortyguard_error": fortyguard_error
     }, None
+
+# ==========================================
+# USER INTERFACE
+# ==========================================
+
+st.markdown(
+    f"<h1 style='text-align:center;'>{T['title']}</h1>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    f"<h3 style='text-align:center;'>{T['subtitle']}</h3>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    f"**{T['description']}**"
+)
+
+st.info(
+    T["live_description"]
+)
+
+st.write(
+    T["enter_description"]
+)
+
+city = st.text_input(
+    T["city"],
+    placeholder="Abu Dhabi"
+)
+
+predict_button = st.button(
+    T["button"],
+    type="primary"
+)
         
 # ==========================================
 # RUN PREDICTION
