@@ -946,26 +946,6 @@ if predict_button:
                         temperature_stats = stats.get(
                             "Temperature_stats", {}
                         )
-
-                        col1, col2, col3 = st.columns(3)
-
-                        with col1:
-                            st.metric(
-                                "Minimum",
-                                f"{temperature_stats.get('Minimum', 'N/A')} °C"
-                            )
-
-                        with col2:
-                            st.metric(
-                                "Mean",
-                                f"{temperature_stats.get('Mean', 'N/A')} °C"
-                            )
-
-                        with col3:
-                            st.metric(
-                                "Maximum",
-                                f"{temperature_stats.get('Maximum', 'N/A')} °C"
-                            )  
                 # ----------------------------------
                 # ALERT
                 # ----------------------------------
