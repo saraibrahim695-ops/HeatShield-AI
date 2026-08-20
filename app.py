@@ -716,6 +716,7 @@ def predict_city(city):
 
     fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
         polygon,
+        print("FORTYGUARD CREATE RESPONSE:", response.text)
         date=datetime.now().strftime("%Y-%m-%d"),
         start_time=datetime.now().strftime("%H:%M")
     )
