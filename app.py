@@ -889,56 +889,70 @@ if predict_button:
                     f"**{T['confidence']}:** "
                     f"{result['confidence']:.1f}%"
                 )
-                  
-# ----------------------------------
-# FORTYGUARD HYPERLOCAL ANALYSIS
-# ----------------------------------
+                # ----------------------------------
+                # FORTYGUARD HYPERLOCAL ANALYSIS
+                # ----------------------------------
 
-st.subheader("🛰️ FortyGuard Hyperlocal Analysis")
-if result.get("fortyguard_error"):
-    st.warning(
-        f"FortyGuard: {result['fortyguard_error']}"
-    )
+                st.subheader("🛰️ FortyGuard Hyperlocal Analysis")
 
-elif result.get("fortyguard_activity_id"):
-    with st.spinner("Analyzing hyperlocal heat conditions with FortyGuard..."):
+                if result.get("fortyguard_error"):
+                    st.warning(
+                        f"FortyGuard: {result['fortyguard_error']}"
+                    )
 
-        fortyguard_result, fortyguard_error = get_fortyguard_result(
-            result["fortyguard_activity_id"]
-        )
+                elif result.get("fortyguard_activity_id"):
 
-        if fortyguard_error:
-            st.warning(
-                f"FortyGuard analysis unavailable: {fortyguard_error}"
-            )
+                    with st.spinner(
+                        "Analyzing hyperlocal heat conditions with FortyGuard..."
+                    ):
 
-        elif fortyguard_result:
-            st.success("✅ FortyGuard heatmap analysis completed.")
+                        fortyguard_result, fortyguard_error = (
+                            get_fortyguard_result(
+                                result["fortyguard_activity_id"]
+                            )
+                        )
 
-            stats = fortyguard_result.get("stats_data", {})
+                    if fortyguard_error:
+                        st.warning(
+                            f"FortyGuard analysis unavailable: "
+                            f"{fortyguard_error}"
+                        )
 
-            st.write("**Hyperlocal temperature statistics:**")
+                    elif fortyguard_result:
 
-            col1, col2, col3 = st.columns(3)
+                        st.success(
+                            "✅ FortyGuard heatmap analysis completed."
+                        )
 
-            with col1:
-                st.metric(
-                    "Minimum",
-                    f"{stats.get('min', 'N/A')} °C"
-                )
+                        stats = fortyguard_result.get(
+                            "stats_data", {}
+                        )
 
-            with col2:
-                st.metric(
-                    "Mean",
-                    f"{stats.get('mean', 'N/A')} °C"
-                )
+                        # FortyGuard stores the temperature
+                        # statistics inside Temperature_stats.
+                        temperature_stats = stats.get(
+                            "Temperature_stats", {}
+                        )
 
-            with col3:
-                st.metric(
-                    "Maximum",
-                    f"{stats.get('max', 'N/A')} °C"
-                )
+                        col1, col2, col3 = st.columns(3)
 
+                        with col1:
+                            st.metric(
+                                "Minimum",
+                                f"{temperature_stats.get('Minimum', 'N/A')} °C"
+                            )
+
+                        with col2:
+                            st.metric(
+                                "Mean",
+                                f"{temperature_stats.get('Mean', 'N/A')} °C"
+                            )
+
+                        with col3:
+                            st.metric(
+                                "Maximum",
+                                f"{temperature_stats.get('Maximum', 'N/A')} °C"
+                            )  
                 # ----------------------------------
                 # ALERT
                 # ----------------------------------
