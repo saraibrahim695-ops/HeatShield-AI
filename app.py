@@ -889,6 +889,55 @@ if predict_button:
                     f"**{T['confidence']}:** "
                     f"{result['confidence']:.1f}%"
                 )
+# ----------------------------------
+# FORTYGUARD HYPERLOCAL ANALYSIS
+# ----------------------------------
+
+st.subheader("🛰️ FortyGuard Hyperlocal Analysis")
+
+if result.get("fortyguard_error"):
+    st.warning(
+        f"FortyGuard: {result['fortyguard_error']}"
+    )
+
+elif result.get("fortyguard_activity_id"):
+    with st.spinner("Analyzing hyperlocal heat conditions with FortyGuard..."):
+
+        fortyguard_result, fortyguard_error = get_fortyguard_result(
+            result["fortyguard_activity_id"]
+        )
+
+        if fortyguard_error:
+            st.warning(
+                f"FortyGuard analysis unavailable: {fortyguard_error}"
+            )
+
+        elif fortyguard_result:
+            st.success("✅ FortyGuard heatmap analysis completed.")
+
+            stats = fortyguard_result.get("stats_data", {})
+
+            st.write("**Hyperlocal temperature statistics:**")
+
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+                st.metric(
+                    "Minimum",
+                    f"{stats.get('min', 'N/A')} °C"
+                )
+
+            with col2:
+                st.metric(
+                    "Mean",
+                    f"{stats.get('mean', 'N/A')} °C"
+                )
+
+            with col3:
+                st.metric(
+                    "Maximum",
+                    f"{stats.get('max', 'N/A')} °C"
+                )
 
                 # ----------------------------------
                 # ALERT
