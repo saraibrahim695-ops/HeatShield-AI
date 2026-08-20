@@ -794,7 +794,7 @@ st.write(
 
 city = st.text_input(
     T["city"],
-    placeholder="Abu Dhabi"
+    placeholder="e.g., Albuquerque"
 )
 
 predict_button = st.button(
