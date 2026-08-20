@@ -531,10 +531,9 @@ def create_fortyguard_heatmap(polygon, date, start_time):
     payload = {
         "polygon_aoi": polygon,
         "date_time": {
-            "start_date": date,
-            "start_time": start_time,
-            "filter_type": 1
-        },
+        "start_date": date,
+        "filter_type": 3
+},
         "granularity": 100
     }
 
