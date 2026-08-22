@@ -705,7 +705,7 @@ def predict_city(city):
                         [longitude + 0.02, latitude + 0.02],
                         [longitude - 0.02, latitude + 0.02],
                         [longitude - 0.02, latitude - 0.02]
-                    ]
+                    ]]
                 }
             }
         ]
