@@ -692,23 +692,23 @@ def predict_city(city):
     longitude = weather["longitude"]
 
     polygon = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[
-                    [-74.0170, 40.7050],
-                    [-74.0030, 40.7050],
-                    [-74.0030, 40.7180],
-                    [-74.0170, 40.7180],
-                    [-74.0170, 40.7050]
-                ]]
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [longitude - 0.02, latitude - 0.02],
+                        [longitude + 0.02, latitude - 0.02],
+                        [longitude + 0.02, latitude + 0.02],
+                        [longitude - 0.02, latitude + 0.02],
+                        [longitude - 0.02, latitude - 0.02]
+                    ]]
+                }
             }
-        }
-    ]
+        ]
     }
 
     fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
