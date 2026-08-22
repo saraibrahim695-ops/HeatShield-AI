@@ -710,7 +710,7 @@ def predict_city(city):
             }
         ]
     }
-
+st.write("DEBUG POLYGON:", polygon)
     fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
     polygon,
     date=datetime.now().strftime("%Y-%m-%d"),
