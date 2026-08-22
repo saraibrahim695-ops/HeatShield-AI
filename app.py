@@ -535,7 +535,6 @@ def create_fortyguard_heatmap(polygon, date, start_time):
     "granularity": 100,
     "analytic_type": "tcm"
     }
-    st.write("DEBUG FORTYGUARD PAYLOAD:", payload)
     try:
         response = requests.post(
             url,
