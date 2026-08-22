@@ -527,11 +527,9 @@ def create_fortyguard_heatmap(polygon, date, start_time):
     }
 
     payload = {
-    "polygon_aoi": polygon,
     "date_time": {
-    "start_date": "2024-07-15",
-    "start_time": "14:00",
-    "filter_type": 1
+    "start_date": date,
+    "filter_type": 3
     },
     "granularity": 100,
     "analytic_type": "tcm"
@@ -715,8 +713,8 @@ def predict_city(city):
 
     fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
     polygon,
-    date="2022-01-20",
-    start_time="00:00"
+    date=datetime.now().strftime("%Y-%m-%d"),
+    start_time=datetime.now().strftime("%H:%M")
     )
 
     # IMPORTANT:
