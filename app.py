@@ -529,8 +529,10 @@ def create_fortyguard_heatmap(polygon, date, start_time):
     payload = {
     "polygon_aoi": polygon,
     "date_time": {
-        "start_date": date,
-        "filter_type": 3
+    "start_date": "2024-07-15",
+    "start_time": "14:00",
+    "filter_type": 1
+},
     },
     "granularity": 100,
     "analytic_type": "tcm"
@@ -701,11 +703,11 @@ def predict_city(city):
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [[
-                    [longitude - 0.01, latitude - 0.01],
-                    [longitude + 0.01, latitude - 0.01],
-                    [longitude + 0.01, latitude + 0.01],
-                    [longitude - 0.01, latitude + 0.01],
-                    [longitude - 0.01, latitude - 0.01]
+                    [-74.0170, 40.7050],
+                    [-74.0030, 40.7050],
+                    [-74.0030, 40.7180],
+                    [-74.0170, 40.7180],
+                    [-74.0170, 40.7050]
                 ]]
             }
         }
