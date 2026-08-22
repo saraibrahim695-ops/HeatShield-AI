@@ -567,7 +567,6 @@ def get_fortyguard_result(activity_id):
 
     try:
         for _ in range(60):
-            st.write("DEBUG FORTYGUARD PAYLOAD:", payload)
             response = requests.get(
                 url,
                 headers=headers,
@@ -711,7 +710,6 @@ def predict_city(city):
             }
         ]
     }
-    st.write("DEBUG POLYGON:", polygon)
     fortyguard_activity_id, fortyguard_error = create_fortyguard_heatmap(
     polygon,
     date=datetime.now().strftime("%Y-%m-%d"),
