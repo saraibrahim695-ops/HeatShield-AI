@@ -532,7 +532,6 @@ def create_fortyguard_heatmap(polygon, date, start_time):
     "start_date": "2024-07-15",
     "start_time": "14:00",
     "filter_type": 1
-},
     },
     "granularity": 100,
     "analytic_type": "tcm"
