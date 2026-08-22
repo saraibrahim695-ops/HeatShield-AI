@@ -571,7 +571,7 @@ def get_fortyguard_result(activity_id):
                 headers=headers,
                 timeout=30
             )
-
+            st.write("DEBUG FORTYGUARD PAYLOAD:", payload)
             if response.status_code != 200:
                 return None, f"FortyGuard status check failed: {response.text}"
 
